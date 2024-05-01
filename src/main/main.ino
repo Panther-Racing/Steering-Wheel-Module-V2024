@@ -17,20 +17,20 @@ MCP2515 mcp2515(8);
 
 void setup() {
   pinMode(A0, INPUT);
-  digitalWrite(PD2, HIGH);
+  digitalWrite(A0, HIGH);
 
   pinMode(A1, INPUT);
-  digitalWrite(PD3, HIGH);
+  digitalWrite(A1, HIGH);
 
   pinMode(A2, INPUT);
-  digitalWrite(PD4, HIGH);
+  // digitalWrite(A2, HIGH);
 
-  pinMode(5, INPUT);
-  digitalWrite(PD5, HIGH);
+  // pinMode(5, INPUT);
+  // digitalWrite(PD5, HIGH);
   
-  //pinMode(A3, INPUT);
-  pinMode(A3, INPUT);
-  //digitalWrite(A3, HIGH);
+  // //pinMode(A3, INPUT);
+  // pinMode(A3, INPUT);
+  // //digitalWrite(A3, HIGH);
     
   if(DEBUG) { Serial.begin(115200); }
   
@@ -45,7 +45,7 @@ void message1() {
 
   //unsigned input = 0x3FF; //placeholder to test message transmission
   
-  unsigned input = map(analogRead(A3), 0, 1023, 0, 255);
+  unsigned input = map(analogRead(A2), 0, 1023, 0, 255);
   frame.can_id  = 0xE0;
   frame.can_dlc = 3;
 
